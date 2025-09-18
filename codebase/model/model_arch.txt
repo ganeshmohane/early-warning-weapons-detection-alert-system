@@ -1,0 +1,4 @@
+- labels = handguns, pistols, rifles, knife, no_weapon, improvised_weapons['broken_bottle', 'metal_rod']
+         = Saftey Mechanism - Cross check with help of the context wether that weapon is safe or not. i.e knife in kitchen
+
+         

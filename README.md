@@ -31,5 +31,9 @@ venv/scripts/activate  # for windows
 pip install -r requirements.txt
 ```
 ```bash
+Create .env 
+**Note: To get more context of the image and to know wether given weapon is safe, for example knife in kitchen will be considered as safe. Only for thats purpose GENAI is being used, The Main predictions are done by trained model and that result and frame(image) is then passed to genai layer where we get to know about image background and  context, Another main purpose of genai to use is to know about Improvised weapons which can be anything like Shattered Glass or Metal Rod etc**
+```
+```bash
 streamlit run main.py
 ```

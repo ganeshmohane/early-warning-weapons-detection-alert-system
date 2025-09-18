@@ -1,4 +1,6 @@
-def threat_analysis(frame, weapon, accuracy):
+from core import send_alert as sa
+
+def detect_threat_level(frame, weapon, accuracy):
     print('data received', frame, weapon, accuracy)
 
     if weapon == 'gun':
@@ -9,7 +11,7 @@ def threat_analysis(frame, weapon, accuracy):
             'accuracy': accuracy,
             'threat_level': 'Critical/High Threat Level'
         }
-        print(type(data), data)
+        sa.alert_police(image, location, threat_level)
         return data
     elif weapon == 'knife':
         data = {
@@ -18,6 +20,7 @@ def threat_analysis(frame, weapon, accuracy):
             'accuracy': accuracy,
             'threat_level': 'Mild Threat Level'
         }
+        sa.alert_police(image, location, threat_level)
         return data
     elif weapon == 'improvised_weapon':
         data = {
@@ -26,6 +29,7 @@ def threat_analysis(frame, weapon, accuracy):
             'accuracy': accuracy,
             'threat_level': 'Mild Threat Level'
         }
+        sa.alert_police(image, location, threat_level)
         return data
     elif weapon == 'no_weapon':
         data = {
@@ -36,4 +40,4 @@ def threat_analysis(frame, weapon, accuracy):
         }
         return data
     else :
-        return f"Unkown Weapon & Threat Level"
+        return {'Error':"Unkown Weapon & Threat Level"}
