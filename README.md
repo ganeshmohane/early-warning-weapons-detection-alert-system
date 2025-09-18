@@ -1,4 +1,4 @@
-# Early-warning-weapons-detection-alert-system
+# Early Warning Weapons Detection and Alert System
 System detects the firearm or any other lethal weapon carried by any person using CCTV camera's and alerts the policy and local authorities to act before any bad incident happens.
 
 ## Project Application
