@@ -1,4 +1,8 @@
 import streamlit as st
+import data_processing as dp
+import threat_analysis as ta
+import send_alert as sa
+
 
 st.title('🔫 Early Warning Weapons Detection & Alert System')
 
@@ -13,4 +17,18 @@ if uploaded_file is not None:
     # send video to data_processing.py
     # run model on each frame
     # send result to threat_analysis.py
-    # show live detected frames one ready, all thid do in live & alert by adding alert and sending whastapp.call msg
+    # show live detected frames one ready, all thid do in live & alert by adding alert and sending whastapp.call msg with captured suspect image & location
+
+    location = 'Sector 1, Navi Mumbai'
+
+    frame, detected_weapon, accuracy = 'image_6789', 'gun', 92 #dp.process_video/image(uploaded_file)
+
+    data = ta.threat_analysis(frame, detected_weapon, accuracy)
+    image = data.get('image')
+    weapon = data.get('weapon')
+    threat_level = data.get('threat_level') 
+    accuracy = data.get('accuracy')
+
+    print('after threat_analysis:', image, weapon, threat_level, accuracy)
+
+    st.write(sa.send_alert(image, location, threat_level))
