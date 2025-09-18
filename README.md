@@ -26,6 +26,7 @@ cd codebase
 ```
 ```bash
 venv/scripts/activate
+```
 ```bash
 pip install -r requirements.txt
 ```
