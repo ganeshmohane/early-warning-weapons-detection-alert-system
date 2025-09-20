@@ -2,6 +2,7 @@ from core import send_alert as sa
 
 def detect_threat_level(frame, weapon, accuracy):
     print('data received in threat_analysis:', weapon, accuracy)
+    '''In future use accuracy to prevent False Reports set threshold'''
 
     if weapon in ['Bazooka', 'Grenade Launcher', 'Explosives']:
         data =  {
