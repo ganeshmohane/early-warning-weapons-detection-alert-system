@@ -35,6 +35,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <img /> 
 
 ## Installation steps guide
+> If you face any issues during installation, [contact me](mailto:ganeshmohane_ds@ltce.in).
 ```bash
 git clone https://github.com/ganeshmohane/early-warning-weapons-detection-alert-system
 ```
@@ -48,7 +49,7 @@ venv/scripts/activate  # for windows
 pip install -r requirements.txt
 ```
 ```bash
-Create .env & inside copy paste gist(provided with submission mail) data as it is 
+Create .env & inside copy paste gist data(provided with submission mail)  as it is 
 ```
 ```bash
 streamlit run main.py
