@@ -1,6 +1,4 @@
-<p align="center">
-  <strong> <h1> Early Warning Weapons Detection and Alert System </h1> </strong>
-</p>
+<h1 align="center">Early Warning Weapons Detection and Alert System 🎦</h1>
 
 The **Early Warning Weapons Detection and Alert System** is an AI-powered security solution designed to automatically detect firearms and other lethal weapons in real-time using CCTV cameras. Upon detection, it immediately notifies law enforcement and security personnel, allowing them to respond before any harmful incident occurs. This system provides continuous monitoring in public spaces, large gatherings, and events, ensuring proactive safety where human surveillance alone is insufficient.
 
@@ -32,6 +30,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <img />
 - Model Detections
 <img />
+- Received Alert mail
 <img /> 
 
 ## Installation steps guide
