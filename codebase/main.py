@@ -9,7 +9,6 @@ from core import threat_analysis as ta
 from core import send_alert as sa
 
 
-
 st.title('Early Warning Weapons Detection & Alert System')
 
 uploaded_file =  st.file_uploader(label="Choose A Video For Detection", type=['mp4', 'mov', 'avi', 'jpg', 'png'])
@@ -32,11 +31,21 @@ if uploaded_file is not None:
 
             video_placeholder = st.empty()
 
+            alert_sent = False 
+
             for frame_id, frame in frames:
                 # YOLO detection
                 detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
                 boxed_frame = cv2.cvtColor(boxed_frame, cv2.COLOR_BGR2RGB)
                 video_placeholder.image(boxed_frame, caption=f"Frame {frame_id} - {detected_weapon} ({accuracy}%)",  width='content')
+                
+                # email alert
+                if not alert_sent and detected_weapon not in ['no_weapon', None]:
+                    genai_result = md.apply_genai_layer(boxed_frame, detected_weapon)
+                    
+                    if genai_result["genai_weapon"] == "yes":
+                        data = ta.detect_threat_level(frame, genai_result['weapon'].title(), accuracy)
+                        alert_sent = True
                 time.sleep(1.5)
 
             os.remove(video_path)
