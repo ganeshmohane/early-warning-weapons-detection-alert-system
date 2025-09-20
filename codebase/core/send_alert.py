@@ -10,9 +10,12 @@ import numpy as np
 load_dotenv()
 resend_api_key = os.environ.get("RESEND_API_KEY")
 Emails.api_key = resend_api_key
+to_email = os.environ.get("EMAIL_ADDRESS")
+location = os.environ.get("LOCATION")
 
 
-def send_alert(image, location, threat_level, detected_weapon, to_email): 
+def send_alert(image, threat_level, detected_weapon): 
+    print('data recieved in send_alert:', threat_level, detected_weapon)
 
     if image.dtype != np.uint8:
         image = image.astype(np.uint8)
@@ -43,11 +46,11 @@ def send_alert(image, location, threat_level, detected_weapon, to_email):
         <h2>Weapon Alert Notification</h2>
         <p><strong>Detected Weapon:</strong> {detected_weapon}</p>
         <p><strong>Threat Level:</strong> {threat_level}</p>
-        <p><strong>Location:</strong> {location}</p>
+        <p><strong>Location of CCTV:</strong> {location}</p>
         <p><strong>Time:</strong> {time_now}</p>
-        <p>The suspect image is attached and also displayed below:</p>
+        <p>The suspect image :</p>
         <img src="cid:suspect-image" style="max-width:100%; height:auto;"/>
-        <p>This is an automated alert from the Early Warning Weapons Detection System intended only for police.</p>
+        <p>This is an automated alert from the <strong>Early Warning Weapons Detection System</strong></p>
     </div>
     """
 
