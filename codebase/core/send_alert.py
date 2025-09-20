@@ -63,13 +63,7 @@ def alert_police(image, location, threat_level, detected_weapon, to_email=mail_a
 
     
 def alert_locals():
-    '''
-    local authorities homeguards, agencies
-    '''
     pass
 
 def alert_army():
-    '''
-    for terrorists or high grade weapons like tanks 😂
-    '''
     pass
