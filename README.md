@@ -1,23 +1,40 @@
-# Early Warning Weapons Detection and Alert System
-System detects the firearm or any other lethal weapon carried by any person using CCTV camera's and alerts the policy and local authorities to act before any bad incident happens.
+<p align="center">
+  <strong># Early Warning Weapons Detection and Alert System</strong>
+</p>
 
-## Project Application
-- Keeping Public Areas Markets or any other events safe
-- Automating Tasks as Human always can keep on eye
+The **Early Warning Weapons Detection and Alert System** is an AI-powered security solution designed to automatically detect firearms and other lethal weapons in real-time using CCTV cameras. Upon detection, it immediately notifies law enforcement and security personnel, allowing them to respond before any harmful incident occurs. This system provides continuous monitoring in public spaces, large gatherings, and events, ensuring proactive safety where human surveillance alone is insufficient.
 
-## Project Objectives
+## Application
+- Ensuring safety at large public events, such as festivals, concerts, and markets.
+- Supplementing human security efforts for 24/7 surveillance.
+- Rapid identification and alerting of potential threats in crowded areas.
+- Detecting improvised weapons and contextually unsafe objects in real-time.
+- Reducing the risk of accidents or attacks by proactive threat detection.
+
+## Objectives
 - Detect Bad things before happens and prevent them from happening
-- Keep people Safe
+- Prevent incidents by detecting threats before they occur.
+- Keep public spaces, events, and gatherings safe.
+- Automate monitoring to support security personnel.
+- Provide context-aware alerts, distinguishing between safe objects (e.g., kitchen knives) and potential weapons
 
-##  TechStack & Weapon detection accuracy metrics
+## TechStack
 - Python
 - Yolov8
 - Streamlit
 
-## Screenshots of the project
-- for demo video open demo folder
+## Model Metrics
+<img />
 
-## Installation guide
+## Screenshots of the project
+- for video demo, Open the demo folder
+- frontend UI
+<img />
+- Model Detections
+<img />
+<img /> 
+
+## Installation steps guide
 ```bash
 git clone https://github.com/ganeshmohane/early-warning-weapons-detection-alert-system
 ```
@@ -31,9 +48,11 @@ venv/scripts/activate  # for windows
 pip install -r requirements.txt
 ```
 ```bash
-Create .env 
-**Note: To get more context of the image and to know whether given weapon is safe, for example knife in kitchen will be considered as safe. Only for thats purpose GENAI is being used, The Main predictions are done by trained model and that result and frame(image) is then passed to genai layer where we get to know about image background and  context, Another main purpose of genai to use is to know about Improvised weapons which can be anything like Shattered Glass or Metal Rod etc**
+Create .env & inside copy paste gist(provided with submission mail) data as it is 
 ```
 ```bash
 streamlit run main.py
 ```
+
+
+<!-- Note: To get more context of the image and to know whether given weapon is safe, for example knife in kitchen will be considered as safe. Only for thats purpose GENAI is being used, The Main predictions are done by trained model and that result and frame(image) is then passed to genai layer where we get to know about image background and  context, Another main purpose of genai to use is to know about Improvised weapons which can be anything like Shattered Glass or Metal Rod etc -->
