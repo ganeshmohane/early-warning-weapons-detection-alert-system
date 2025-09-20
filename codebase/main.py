@@ -34,15 +34,18 @@ if uploaded_file is not None:
                 detected_weapon, accuracy = md.detect_weapons(frame)
                 data = ta.detect_threat_level(frame, detected_weapon, accuracy)
                 
-                #st.image(frame, caption=f"Frame {frame_id} - {detected_weapon} ({accuracy}%)")
+                st.image(frame, caption=f"Frame {frame_id} - {detected_weapon} ({accuracy}%)")
 
         elif file_type in ['image/jpeg','image/png']:
             frame = dp.process_image(uploaded_file)
 
-            detected_weapon, accuracy = md.detect_weapons(frame)
-            data = ta.detect_threat_level(frame, detected_weapon, accuracy)
+            detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
+            #print(detected_weapon, accuracy)
 
-           #st.image(frame, caption=f"{detected_weapon} ({accuracy}%)")
+            data = ta.detect_threat_level(frame, detected_weapon, accuracy)
+            threat_level = data.get('threat_level')
+
+            st.image(boxed_frame, caption=f"{detected_weapon} ({accuracy}%), Threat level: {threat_level}")
 
         data = ta.detect_threat_level(frame, detected_weapon, accuracy)
         image = data.get('image')

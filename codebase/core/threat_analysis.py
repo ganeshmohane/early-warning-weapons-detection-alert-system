@@ -1,7 +1,7 @@
 from core import send_alert as sa
 
 def detect_threat_level(frame, weapon, accuracy):
-    print('data received', frame, weapon, accuracy)
+    # print('data received', frame, weapon, accuracy)
 
     if weapon == 'gun':
         print('inside')
