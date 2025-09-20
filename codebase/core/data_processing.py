@@ -24,7 +24,7 @@ def process_video(uploaded_file, frame_skip=30):
         frame_id += 1
 
     cap.release()
-    return frames, video_path  # do NOT delete here
+    return frames, video_path
 
 
 def process_image(uploaded_file):
