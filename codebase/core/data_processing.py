@@ -4,8 +4,9 @@ import os
 import numpy as np
 
 def process_video(uploaded_file, frame_skip=30):
-    # Save uploaded file to a temporary location
-    tfile = tempfile.NamedTemporaryFile(delete=False)
+    import tempfile, cv2, numpy as np
+
+    tfile = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
     tfile.write(uploaded_file.read())
     video_path = tfile.name
 
@@ -17,17 +18,13 @@ def process_video(uploaded_file, frame_skip=30):
         ret, frame = cap.read()
         if not ret:
             break
-
-        # Grab every Nth frame
         if frame_id % frame_skip == 0:
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             frames.append((frame_id, frame_rgb))
-
         frame_id += 1
 
     cap.release()
-    os.remove(video_path)
-    return frames
+    return frames, video_path  # do NOT delete here
 
 
 def process_image(uploaded_file):

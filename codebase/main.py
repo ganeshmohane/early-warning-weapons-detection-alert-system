@@ -1,9 +1,16 @@
+import os
+import cv2
+import time
+import numpy as np
+from dotenv import load_dotenv
 import streamlit as st
 from core import data_processing as dp
 from core import model_detection as md
 from core import threat_analysis as ta
 from core import send_alert as sa
 
+load_dotenv()
+mail_address = os.environ.get("EMAIL_ADDRESS")
 
 st.title('🔫 Early Warning Weapons Detection & Alert System')
 
@@ -14,28 +21,37 @@ if uploaded_file is not None:
     file_type = uploaded_file.type
 
     if file_type in ['video/mp4','video/mov', 'video/avi']:
+        video_placeholder = st.empty()
         st.video(uploaded_file)
     if file_type in ['image/jpeg', 'image/png']:
         st.image(uploaded_file)
 
 
 
-    if st.button('Run Detection'):
+    if st.button('Run Real Time Detection'):
         # send video to data_processing.py
         # run model on each frame
         # send result to threat_analysis.py
         # show live detected frames one ready, all thid do in live & alert by adding alert and sending whastapp.call msg with captured suspect image & location
 
         location = 'Sector 1, Navi Mumbai'
+        
         if file_type in ['video/mp4','video/mov','video/avi']:
-            frames = dp.process_video(uploaded_file)
+            frames, video_path = dp.process_video(uploaded_file)
+
+            video_placeholder = st.empty()
 
             for frame_id, frame in frames:
-                detected_weapon, accuracy = md.detect_weapons(frame)
-                data = ta.detect_threat_level(frame, detected_weapon, accuracy)
-                
-                st.image(frame, caption=f"Frame {frame_id} - {detected_weapon} ({accuracy}%)")
+                # Run YOLO detection
+                detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
+                boxed_frame = cv2.cvtColor(boxed_frame, cv2.COLOR_BGR2RGB)
+                video_placeholder.image(boxed_frame, caption=f"Frame {frame_id} - {detected_weapon} ({accuracy}%)",  width='content')
+                time.sleep(1.5)
 
+            # Cleanup
+            os.remove(video_path)
+            st.success("Video processing complete ✅")
+            
         elif file_type in ['image/jpeg','image/png']:
             frame = dp.process_image(uploaded_file)
 
@@ -45,7 +61,19 @@ if uploaded_file is not None:
             data = ta.detect_threat_level(frame, detected_weapon, accuracy)
             threat_level = data.get('threat_level')
 
-            st.image(boxed_frame, caption=f"{detected_weapon} ({accuracy}%), Threat level: {threat_level}")
+            genai_result = md.apply_genai_layer(boxed_frame, detected_weapon)
+            if genai_result["genai_weapon"] == "yes":
+                threat_level = "high"
+                # Trigger alert: send police / WhatsApp / email
+                sa.alert_police(
+                    image=genai_result["image"],
+                    location="Sector 1, Navi Mumbai",
+                    threat_level=threat_level,
+                    detected_weapon=genai_result["weapon"],
+                    to_email=mail_address
+                )
+
+            st.image(genai_result['image'], caption=f"{genai_result['weapon']} - Threat: {genai_result['genai_weapon']} ({genai_result['evidence_by_genai']})")
 
         data = ta.detect_threat_level(frame, detected_weapon, accuracy)
         image = data.get('image')

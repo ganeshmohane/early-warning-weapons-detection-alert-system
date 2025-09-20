@@ -1,3 +1,6 @@
 streamlit
 opencv-python
 ultralytics
+google.genai
+resend
+dotenv
