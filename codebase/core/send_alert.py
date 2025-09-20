@@ -43,12 +43,12 @@ def send_alert(image, threat_level, detected_weapon):
 
     html_content = f"""
     <div style="font-family: Arial; padding: 20px;">
-        <h2>Weapon Alert Notification</h2>
+        <h2> 🛑 Weapon Alert Notification</h2>
         <p><strong>Detected Weapon:</strong> {detected_weapon}</p>
         <p><strong>Threat Level:</strong> {threat_level}</p>
         <p><strong>Location of CCTV:</strong> {location}</p>
         <p><strong>Time:</strong> {time_now}</p>
-        <p>The suspect image :</p>
+        <p><strong>The suspect image: </strong></p>
         <img src="cid:suspect-image" style="max-width:100%; height:auto;"/>
         <p>This is an automated alert from the <strong>Early Warning Weapons Detection System</strong></p>
     </div>
