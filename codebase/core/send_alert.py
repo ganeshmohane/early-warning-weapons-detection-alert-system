@@ -9,12 +9,10 @@ import numpy as np
 
 load_dotenv()
 resend_api_key = os.environ.get("RESEND_API_KEY")
-mail_address = os.environ.get("EMAIL_ADDRESS")
-
 Emails.api_key = resend_api_key
 
 
-def alert_police(image, location, threat_level, detected_weapon, to_email=mail_address): 
+def send_alert(image, location, threat_level, detected_weapon, to_email): 
 
     if image.dtype != np.uint8:
         image = image.astype(np.uint8)
@@ -60,10 +58,3 @@ def alert_police(image, location, threat_level, detected_weapon, to_email=mail_a
         "html": html_content,
         "attachments": [attachment]
     })
-
-    
-def alert_locals():
-    pass
-
-def alert_army():
-    pass
