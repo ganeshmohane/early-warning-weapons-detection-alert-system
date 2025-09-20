@@ -6,6 +6,7 @@ import os
 from dotenv import load_dotenv
 from resend import Emails
 import numpy as np
+import streamlit as st
 
 load_dotenv()
 resend_api_key = os.environ.get("RESEND_API_KEY")
@@ -61,3 +62,5 @@ def send_alert(image, threat_level, detected_weapon):
         "html": html_content,
         "attachments": [attachment]
     })
+
+    st.write('Alert EMail Sent')
