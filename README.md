@@ -22,7 +22,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 - Streamlit
 
 ## Model Metrics
-<img />
+<img /> or juts proper acurayc precison recall map boudnbox whater 
 
 ## Screenshots of the project
 - for video demo, Open the demo folder
