@@ -4,13 +4,17 @@ from PIL import Image
 import datetime
 import os
 from dotenv import load_dotenv
+import resend
 from resend import Emails
 import numpy as np
 import streamlit as st
 
 load_dotenv()
 resend_api_key = os.environ.get("RESEND_API_KEY")
-Emails.api_key = resend_api_key
+
+if resend_api_key:
+    Emails.api_key = resend_api_key
+
 to_email = os.environ.get("EMAIL_ADDRESS")
 location = os.environ.get("LOCATION")
 
@@ -54,13 +58,25 @@ def send_alert(image, threat_level, detected_weapon):
         <p>This is an automated alert from the <strong>Early Warning Weapons Detection System</strong></p>
     </div>
     """
+    if not resend_api_key:
+        return False
 
-    return Emails.send({
-        "from": "Early Warning System <alert@veloitsolutions.in>",
-        "to": [to_email],
-        "subject": subject,
-        "html": html_content,
-        "attachments": [attachment]
-    })
+    try: 
+        Emails.send({
+            "from": "Early Warning System <alert@veloitsolutions.in>",
+            "to": [to_email],
+            "subject": subject,
+            "html": html_content,
+            "attachments": [attachment]
+        })
+        return True
+
+    except resend.exceptions.ResendError as e:
+        st.warning("⚠️ Email not sent (invalid API key).")
+        return False
+
+    except Exception as e:
+        st.warning("⚠️ Email not sent due to unexpected error.")
+        return False
 
     st.write('Alert EMail Sent')
