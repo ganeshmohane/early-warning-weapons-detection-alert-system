@@ -34,7 +34,6 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 - mAP@50-95 (B): 37.79%
 
 ## Screenshots of the project
-> for video demo, Open the demo folder
 
 - ### frontend UI
 <img width="844" height="425" alt="image" src="https://github.com/user-attachments/assets/7b51f046-7eeb-4099-b318-39ac77c68c64" />
