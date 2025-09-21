@@ -28,8 +28,10 @@ def process_video(uploaded_file, frame_skip=30):
 
 
 def process_image(uploaded_file):
-    file_bytes = uploaded_file.read()
-    np_arr = np.frombuffer(file_bytes, np.uint8)
-    img = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+    uploaded_file.seek(0)
+    file_bytes = np.frombuffer(uploaded_file.read(), np.uint8)
+    img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+    if img is None:
+        raise ValueError("Error: Could not decode image. File may be corrupted or not supported.")
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     return img_rgb
