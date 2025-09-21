@@ -49,12 +49,12 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon == 'no_weapon':
+    elif weapon == 'No_Weapon':
         data = {
             'image': frame,
             'weapon': weapon,
             'accuracy': accuracy,
-            'threat_level': 'No Threat'
+            'threat_level': 'Safe - No Threat'
         }
         return data
     else :
