@@ -54,7 +54,7 @@ if uploaded_file is not None:
             frame = dp.process_image(uploaded_file)
 
             detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
-            # print(detected_weapon, accuracy)
+            print(detected_weapon, accuracy)
 
             data = ta.detect_threat_level(boxed_frame, detected_weapon.title(), accuracy)
 
