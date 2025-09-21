@@ -73,10 +73,16 @@ git clone https://github.com/ganeshmohane/early-warning-weapons-detection-alert-
 cd codebase
 ```
 ```bash
+python -m venv venv
+```
+```bash
 venv/scripts/activate  # for windows
 ```
 ```bash
-pip install -r requirements.txt
+pip install uv 
+```
+```bash
+uv pip install -r requirements.txt
 ```
 ```bash
 Create .env inside codebase folder & copy paste gist data(provided with submission mail)  as it is 
