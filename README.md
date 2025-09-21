@@ -48,7 +48,7 @@ venv/scripts/activate  # for windows
 pip install -r requirements.txt
 ```
 ```bash
-Create .env & inside copy paste gist data(provided with submission mail)  as it is 
+Create .env inside codebase folder & copy paste gist data(provided with submission mail)  as it is 
 ```
 ```bash
 streamlit run main.py
