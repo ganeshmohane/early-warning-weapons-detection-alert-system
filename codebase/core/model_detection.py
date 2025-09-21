@@ -19,7 +19,7 @@ def detect_weapons(frame):
     """
     results = model.predict(frame, verbose=False)
 
-    detected_weapon = ''
+    detected_weapon = 'no_weapon'
     accuracy = 0
 
     for r in results:
