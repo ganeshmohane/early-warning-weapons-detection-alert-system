@@ -23,15 +23,14 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 
 ## Model Metrics
 
-### [Dataset link](https://www.kaggle.com/datasets/snehilsanyal/weapon-detection-test/data)
+### [Dataset link](https://app.roboflow.com/ganesh-lbmbj/weapons-detection-xtbsk/2)
 
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/b5b6ffad-164c-4cd1-addb-29e076a3341a" />
+<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/571f8ae3-4116-441c-9c62-2992d2620d52" />
 
-- Precision (B): 0.609
-- Recall (B): 0.511
-- mAP@50 (B): 0.530
-- mAP@50-95 (B): 0.456
-- Fitness: 0.456
+- **Precision (B): 89.73%**
+- Recall (B): 50.75%
+- mAP@50 (B): 59.26%
+- mAP@50-95 (B): 37.79%
 
 ## Screenshots of the project
 > for video demo, Open the demo folder
