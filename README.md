@@ -22,7 +22,16 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 - Streamlit
 
 ## Model Metrics
-<img /> or juts proper acurayc precison recall map boudnbox whater 
+
+### [Dataset link](https://www.kaggle.com/datasets/snehilsanyal/weapon-detection-test/data)
+
+<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/b5b6ffad-164c-4cd1-addb-29e076a3341a" />
+
+- Precision (B): 0.609
+- Recall (B): 0.511
+- mAP@50 (B): 0.530
+- mAP@50-95 (B): 0.456
+- Fitness: 0.456
 
 ## Screenshots of the project
 > for video demo, Open the demo folder
@@ -31,6 +40,12 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/36e39ad0-789a-4e67-bb4a-425e03218af9" />
 
 - ### Model Detections
+- #### Firearm detected
+<img width="967" height="695" alt="image" src="https://github.com/user-attachments/assets/4563669f-3fa8-4c76-ae70-c1519d57a9ff" />
+
+- #### Safe - No Weapon
+  <img width="960" height="585" alt="image" src="https://github.com/user-attachments/assets/bbedf7a6-04aa-469c-a330-fd4458f79f6f" />
+
 
 - ### Received Alert mail
 <img width="583" height="591" alt="image" src="https://github.com/user-attachments/assets/281aa704-f4fe-4e6a-8196-01b946668cf9" />
