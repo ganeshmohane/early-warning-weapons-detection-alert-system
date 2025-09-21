@@ -73,6 +73,9 @@ git clone https://github.com/ganeshmohane/early-warning-weapons-detection-alert-
 cd codebase
 ```
 ```bash
+python -m venv venv
+```
+```bash
 venv/scripts/activate  # for windows
 ```
 ```bash
