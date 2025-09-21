@@ -79,7 +79,10 @@ python -m venv venv
 venv/scripts/activate  # for windows
 ```
 ```bash
-pip install -r requirements.txt
+pip install uv 
+```
+```bash
+uv pip install -r requirements.txt
 ```
 ```bash
 Create .env inside codebase folder & copy paste gist data(provided with submission mail)  as it is 
