@@ -23,28 +23,33 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 
 ## Model Metrics
 
-### [Dataset link](https://www.kaggle.com/datasets/snehilsanyal/weapon-detection-test/data)
+### [Dataset link](https://app.roboflow.com/ganesh-lbmbj/weapons-detection-xtbsk/2)
 
-<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/b5b6ffad-164c-4cd1-addb-29e076a3341a" />
+<img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/571f8ae3-4116-441c-9c62-2992d2620d52" />
 
-- Precision (B): 0.609
-- Recall (B): 0.511
-- mAP@50 (B): 0.530
-- mAP@50-95 (B): 0.456
-- Fitness: 0.456
+- **Precision (B): 89.73%**
+- Recall (B): 50.75%
+- mAP@50 (B): 59.26%
+- mAP@50-95 (B): 37.79%
 
 ## Screenshots of the project
 > for video demo, Open the demo folder
 
 - ### frontend UI
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/36e39ad0-789a-4e67-bb4a-425e03218af9" />
+<img width="844" height="425" alt="image" src="https://github.com/user-attachments/assets/7b51f046-7eeb-4099-b318-39ac77c68c64" />
 
 - ### Model Detections
-- #### Firearm detected
-<img width="967" height="695" alt="image" src="https://github.com/user-attachments/assets/4563669f-3fa8-4c76-ae70-c1519d57a9ff" />
 
-- #### Safe - No Weapon
-  <img width="960" height="585" alt="image" src="https://github.com/user-attachments/assets/bbedf7a6-04aa-469c-a330-fd4458f79f6f" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fbd759a8-edc2-4c41-ad4d-77d53a19180c" alt="Class Stats 1" width="300"/>
+  <img src="https://github.com/user-attachments/assets/fef4a3c0-18e1-400e-825d-e0e00d3b6856" alt="Class Stats 2" width="300"/>
+  <img src="https://github.com/user-attachments/assets/2c78a6e5-7e55-4862-ae11-2855d662e710" alt="Class Stats 3" width="300"/>
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cfdaf56f-0d19-4eab-ae47-027ae33a40d2" alt="Class Stats 4" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1f3ef455-53fc-4062-8950-3ffccd18b618" alt="Class Stats 5" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1edce79b-6614-4d66-ba42-c0d59d89532b" alt="Class Stats 6" width="300"/>
+</p>
 
 
 - ### Received Alert mail
