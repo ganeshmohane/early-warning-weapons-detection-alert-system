@@ -25,13 +25,16 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <img /> or juts proper acurayc precison recall map boudnbox whater 
 
 ## Screenshots of the project
-- for video demo, Open the demo folder
-- frontend UI
-<img />
-- Model Detections
-<img />
-- Received Alert mail
-<img /> 
+> for video demo, Open the demo folder
+
+- ### frontend UI
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/36e39ad0-789a-4e67-bb4a-425e03218af9" />
+
+- ### Model Detections
+
+- ### Received Alert mail
+<img width="583" height="591" alt="image" src="https://github.com/user-attachments/assets/281aa704-f4fe-4e6a-8196-01b946668cf9" />
+
 
 ## Installation steps guide
 > If you face any issues during installation, [contact me](mailto:ganeshmohane_ds@ltce.in).
