@@ -58,4 +58,10 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         return data
     else :
-        return {'Error':"Unkown Weapon & Threat Level"}
+        data = {
+            'image': None,
+            'weapon': None,
+            'accuracy': None,
+            'threat_level': 'Unknown as parameters passed are wrong/insufficeint'
+        }
+        return data

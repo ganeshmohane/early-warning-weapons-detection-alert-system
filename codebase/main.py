@@ -11,7 +11,7 @@ from core import send_alert as sa
 
 st.title('Early Warning Weapons Detection & Alert System')
 
-uploaded_file =  st.file_uploader(label="Choose A Video For Detection", type=['mp4', 'mov', 'avi', 'jpg', 'png'])
+uploaded_file =  st.file_uploader(label="Choose A Image/Video For Detection", type=['mp4', 'mov', 'avi', 'jpg', 'png'])
 if uploaded_file is not None:
 
     file_type = uploaded_file.type
@@ -41,15 +41,13 @@ if uploaded_file is not None:
                 
                 # email alert
                 if not alert_sent and detected_weapon not in ['no_weapon', None]:
-                    genai_result = md.apply_genai_layer(boxed_frame, detected_weapon)
-                    
-                    if genai_result["genai_weapon"] == "yes":
-                        data = ta.detect_threat_level(frame, genai_result['weapon'].title(), accuracy)
-                        alert_sent = True
+                    data = ta.detect_threat_level(boxed_frame, detected_weapon.title(), accuracy)
+                    alert_sent = True
                 time.sleep(1.5)
 
             os.remove(video_path)
             st.success("Detection Complete ✅")
+
 
         # Images files  
         elif file_type in ['image/jpeg','image/png']:
@@ -58,9 +56,7 @@ if uploaded_file is not None:
             detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
             # print(detected_weapon, accuracy)
 
-            genai_result = md.apply_genai_layer(boxed_frame, detected_weapon)
-            if genai_result["genai_weapon"] == "yes":
-                ta.detect_threat_level(frame, genai_result['weapon'].title(), accuracy)
+            data = ta.detect_threat_level(boxed_frame, detected_weapon.title(), accuracy)
 
-            st.image(genai_result['image'], caption=f"{genai_result['weapon']} - Threat: {genai_result['genai_weapon']} ({genai_result['evidence_by_genai']})")
+            st.image(boxed_frame, caption=f"{data['weapon']} - Threat level: {data['threat_level']}")
             st.success("Detection Complete ✅")
