@@ -56,6 +56,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 - ### Received Alert mail
 <img width="583" height="591" alt="image" src="https://github.com/user-attachments/assets/281aa704-f4fe-4e6a-8196-01b946668cf9" />
 
+> The problem of understanding whether given weapon is safe in different context, For that we can use genai_layer which I tried in another branch, also other way is if we do not want to inlcude genai is by building multiple models pipeline. for example one model is for detetction of weapons another is detection of images background so if we got weapon as kitchen and background is kitchen then we can consider it as a safe to reduce false alarms.
 
 ## Installation steps guide
 > If you face any issues during installation, [contact me](mailto:ganeshmohane_ds@ltce.in).
