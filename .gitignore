@@ -1,3 +1,4 @@
+/codebase/.env
 /codebase/venv
 /codebase/__pycache__
 /codebase/core/__pycache__
