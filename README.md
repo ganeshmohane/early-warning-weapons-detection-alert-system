@@ -39,11 +39,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/36e39ad0-789a-4e67-bb4a-425e03218af9" />
 
 - ### Model Detections
-- #### Firearm detected
-  <img width="967" height="695" alt="image" src="https://github.com/user-attachments/assets/4563669f-3fa8-4c76-ae70-c1519d57a9ff" />
-- #### Safe - No Weapon
-  <img width="960" height="585" alt="image" src="https://github.com/user-attachments/assets/bbedf7a6-04aa-469c-a330-fd4458f79f6f" />
-- #### All Classes
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/fbd759a8-edc2-4c41-ad4d-77d53a19180c" alt="Class Stats 1" width="300"/>
   <img src="https://github.com/user-attachments/assets/fef4a3c0-18e1-400e-825d-e0e00d3b6856" alt="Class Stats 2" width="300"/>
@@ -52,6 +48,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 <p align="center">
   <img src="https://github.com/user-attachments/assets/cfdaf56f-0d19-4eab-ae47-027ae33a40d2" alt="Class Stats 4" width="300"/>
   <img src="https://github.com/user-attachments/assets/1f3ef455-53fc-4062-8950-3ffccd18b618" alt="Class Stats 5" width="300"/>
+  <img src="https://github.com/user-attachments/assets/1edce79b-6614-4d66-ba42-c0d59d89532b" alt="Class Stats 6" width="300"/>
 </p>
 
 
