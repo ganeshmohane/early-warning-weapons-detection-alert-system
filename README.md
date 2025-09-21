@@ -24,6 +24,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 ## Model Metrics
 
 ### [Dataset link](https://app.roboflow.com/ganesh-lbmbj/weapons-detection-xtbsk/2)
+### [Kaggle Notebook](https://www.kaggle.com/code/ganeshmohane/yolov8-v3-0-weapon-detection-model)
 
 <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/571f8ae3-4116-441c-9c62-2992d2620d52" />
 
