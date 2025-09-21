@@ -28,11 +28,6 @@ def detect_weapons(frame):
             conf = float(box.conf[0]) * 100
             label = model.names[cls_id].lower()
 
-            # if label in ["gun", "knife", "improvised_weapon", "no_weapon"]:  #['no_weapon', 'handgun', 'pistol', 'shotgun', 'rifle', 'knife', 'improvised_weapon']
-            #    detected_weapon = label
-            #    accuracy = round(conf, 2)
-            #    break
-
             detected_weapon = label
             accuracy = round(conf, 2)
 

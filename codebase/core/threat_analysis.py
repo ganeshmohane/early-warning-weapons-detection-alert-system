@@ -4,7 +4,7 @@ def detect_threat_level(frame, weapon, accuracy):
     print('data received in threat_analysis:', weapon, accuracy)
     '''In future use accuracy to prevent False Reports set threshold'''
 
-    if weapon in ['Bazooka', 'Grenade Launcher', 'Explosives']:
+    if weapon in ['bazooka', 'grenade_launcher', 'explosives']:
         data =  {
             'image': frame,
             'weapon': weapon,
@@ -13,7 +13,7 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon in ['Automatic Rifle', 'Sniper']:
+    elif weapon in ['rifle', 'sniper']:
         data =  {
             'image': frame,
             'weapon': weapon,
@@ -22,7 +22,7 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon in ['Handgun', 'Shotgun', 'SMG']:
+    elif weapon in ['handgun', 'shotgun', 'smg']:
         data =  {
             'image': frame,
             'weapon': weapon,
@@ -31,7 +31,7 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon in ['Knife', 'Sword']:
+    elif weapon in ['knife', 'sword']:
         data = {
             'image': frame,
             'weapon': weapon,
@@ -40,7 +40,7 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon == 'improvised_weapon':
+    elif weapon in ['metal_rod', 'broken_bottle']:
         data = {
             'image': frame,
             'weapon': weapon,
@@ -49,7 +49,7 @@ def detect_threat_level(frame, weapon, accuracy):
         }
         sa.send_alert(frame, data['threat_level'], weapon)
         return data
-    elif weapon == 'No_Weapon':
+    elif weapon == 'no_weapon':
         data = {
             'image': frame,
             'weapon': weapon,

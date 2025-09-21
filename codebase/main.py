@@ -41,7 +41,7 @@ if uploaded_file is not None:
                 
                 # email alert
                 if not alert_sent and detected_weapon not in ['no_weapon', None]:
-                    data = ta.detect_threat_level(boxed_frame, detected_weapon.title(), accuracy)
+                    data = ta.detect_threat_level(boxed_frame, detected_weapon, accuracy)
                     alert_sent = True
                 time.sleep(1.5)
 
@@ -56,7 +56,7 @@ if uploaded_file is not None:
             detected_weapon, accuracy, boxed_frame = md.detect_weapons(frame)
             print(detected_weapon, accuracy)
 
-            data = ta.detect_threat_level(boxed_frame, detected_weapon.title(), accuracy)
+            data = ta.detect_threat_level(boxed_frame, detected_weapon, accuracy)
 
-            st.image(boxed_frame, caption=f"{data['weapon']} - Threat level: {data['threat_level']}")
+            st.image(boxed_frame, caption=f"Weapon - {data['weapon']}: Accuracy - {data['accuracy']}'%', Threat level: {data['threat_level']}")
             st.success("Detection Complete ✅")
