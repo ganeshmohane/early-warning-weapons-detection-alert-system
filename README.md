@@ -24,6 +24,7 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 ## Model Metrics
 
 ### [Dataset link](https://app.roboflow.com/ganesh-lbmbj/weapons-detection-xtbsk/2)
+### [Kaggle Notebook](https://www.kaggle.com/code/ganeshmohane/yolov8-v3-0-weapon-detection-model)
 
 <img width="2400" height="1200" alt="results" src="https://github.com/user-attachments/assets/571f8ae3-4116-441c-9c62-2992d2620d52" />
 
@@ -53,8 +54,15 @@ The **Early Warning Weapons Detection and Alert System** is an AI-powered securi
 
 
 - ### Received Alert mail
-<img width="583" height="591" alt="image" src="https://github.com/user-attachments/assets/281aa704-f4fe-4e6a-8196-01b946668cf9" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/51a1709f-1ec6-41a9-91d6-62f12613db8d" alt="Class Stats 1" width="300" />
+  <img src="https://github.com/user-attachments/assets/44ae117c-9f81-4735-8e83-2e662545b1a5" alt="Class Stats 2" width="300" />
+</p>
 
+
+
+## About Context Problem
+> The problem of understanding whether given weapon is safe in different context, For that we can use genai_layer which I tried in another branch - **feature/genai_layer** you can check out the logic. Also other way is if we do not want to inlcude genai is by building multiple models pipeline. for example one model is for detetction of weapons another is detection of images background so if we got weapon as kitchen and background is kitchen then we can consider it as a safe to reduce false alarms.
 
 ## Installation steps guide
 > If you face any issues during installation, [contact me](mailto:ganeshmohane_ds@ltce.in).
